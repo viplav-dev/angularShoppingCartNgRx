@@ -1,0 +1,21 @@
+<div class="card-group">
+  <div *ngFor="let product of this.productList">
+    <div class="card m-2" style="width: 340px">
+      <img
+        class="card-img-top"
+        src="{{ product.images[0] }}"
+        alt="Card image cap"
+        style="height: 200px; width: auto; object-fit: cover"
+      />
+      <div class="card-body">
+        <small class="text-muted">{{ product.price | currency }}</small>
+        <h5 class="card-title">{{ product.title }}</h5>
+      </div>
+      <div class="card-footer">
+        <div class="btn btn-primary" (click)="onAddToCart(product)">
+          Add to Cart
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
